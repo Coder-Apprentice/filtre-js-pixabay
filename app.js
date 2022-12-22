@@ -72,27 +72,25 @@ inputSearch.setAttribute("placeholder", "Search for something..");
 // Ce qui permet de déclencher l'évent a chaque changement de value 
 inputSearch.addEventListener("input", () => {
   console.log("geojgoerjgero", inputSearch.value.toUpperCase());
+  
   // L'id de la liste UL = listeCards
-  
-  
-    
-  
-  
-  filter = inputSearch.value
-  li = ul.getElementsByTagName("a");
+  var input, filter, ul, li, a, i, txtValue;
+
+  // input = document.getElementById("myInput");
+
+  filter = inputSearch.value.toUpperCase();
+  ul = document.getElementById("listeCards");
+  li = ul.getElementsByTagName("li");
   
   for (i = 0; i < li.length; i++) {
-      li = li[i].getElementsByTagName("a")[0];
-      inputSearch.value = a.textContent || a.innerText;
-      if (inputSearch.value.toUpperCase().indexOf(filter) > -1) {
+      a = li[i].getElementsByTagName("a")[0];
+      txtValue = a.textContent || a.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
           li[i].style.display = "";
       } else {
           li[i].style.display = "none";
       }
-
-      
   }
-
 });
 
 // ajout  du champs sesi dans la nav
